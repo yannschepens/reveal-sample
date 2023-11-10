@@ -49,7 +49,7 @@ code {
 }
 
 .entrypoint .tableblock td:first-child {
-    border-right: 1px solid #EFEFEF;
+    border-right: 1px solid;
 }
 
 .entrypoint .yann-intro, .entrypoint .yann-name, .entrypoint .yann-role {
