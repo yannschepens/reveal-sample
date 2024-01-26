@@ -1,7 +1,9 @@
 name: Deploy on pages
 run-name: ${{ github.actor }} is trying to deploy talk support on github
 on:
-  branches: ["main"]
+  push:
+    branches: ["main"]
+  workflow_dispatch:
 permissions:
   contents: read
   pages: write
