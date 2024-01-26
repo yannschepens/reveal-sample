@@ -1,6 +1,14 @@
 name: Deploy on pages
 run-name: ${{ github.actor }} is trying to deploy talk support on github
-on: [push]
+on:
+  branches: ["main"]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 jobs:
   build-and-deploy:
     environment:
