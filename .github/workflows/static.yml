@@ -3,6 +3,7 @@ run-name: ${{ github.actor }} is trying to deploy talk support on github
 on:
   push:
     branches: ["main"]
+    tags: ['*']
   workflow_dispatch:
 permissions:
   contents: read
@@ -15,7 +16,7 @@ jobs:
   build-and-deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ github.ref_name }}.${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
