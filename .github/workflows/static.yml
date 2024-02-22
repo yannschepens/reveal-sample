@@ -16,7 +16,7 @@ jobs:
   build-and-deploy:
     environment:
       name: github-pages
-      url: ${{ github.ref_name }}.${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}/${{ github.ref_name }}/
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
